@@ -3,23 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Legend — GTA VI Trophy Guide</title>
+<meta name="description" content="The complete GTA VI trophy guide: all 55 trophies with a step-by-step plan for each, a checklist that saves your progress, and a 6-phase road to the platinum.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; 1,350 points</p>
+    <h1>LEONIDA LEGEND</h1>
+    <p class="sub">Every trophy, every step, in one place. Tick them off as you earn them — your progress is saved on this device, and the roadmap below takes you from the opening mission to the platinum.</p>
+  </div>
+  <div class="ring-wrap" aria-label="Progress">
+    <svg class="ring" viewBox="0 0 120 120" width="120" height="120">
+      <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="52"></circle>
+    </svg>
+    <div class="ring-label"><span id="ringPct">0%</span><small id="ringCount">0 / 55</small></div>
+  </div>
 </header>
+
+<p class="missable-banner" id="missableBanner">&#9888; Missable warning: 5 trophies are possibly missable — Fair Game (#29), Catch Me If You Can (#37), Capital Offense (#45), Actions Speak Louder (#48) and Bad Luck, I Guess (#49). Read their guides before the story moment passes; everything else can be cleaned up after the finale.</p>
+
+<section class="roadmap" aria-label="Roadmap to the platinum">
+  <h2>The road to the platinum — 6 phases</h2>
+  <ol class="phases">
+    <li><strong>Phase 1 — Story.</strong> Play Chapters 1–4 and the final mission in order. Story trophies (#2–#13, #7) pop as you go; keep an eye out for the missable set-pieces in #37 and #45 while you are there.</li>
+    <li><strong>Phase 2 — Strangers &amp; Freaks.</strong> Work the stranger strands (Andy, Kenton, Billy, Randy, Tyrone, Bret) as their markers appear. Eight finished strands earns the silver; do Bret's hunt (#29) before the story ends.</li>
+    <li><strong>Phase 3 — Activities &amp; skill.</strong> Sample all nine activity types, then grind the counts: 250 stunts, 20 race wins, drone races at every location, gold medals at the Shooting Range, fishing, arcade, bowling and meditation.</li>
+    <li><strong>Phase 4 — Collectibles &amp; exploration.</strong> Card sets, 100 WAiNK spots, 100 vehicles, and every corner of Leonida — sweep the map region by region and let the counters build.</li>
+    <li><strong>Phase 5 — Money &amp; crime.</strong> Launder $250,000 of Marked Bills, spend $100,000 in shops, buy every garage, and run the robberies: jewelry store, armored truck, five bank vaults, one illegal operation per gang.</li>
+    <li><strong>Phase 6 — Duo feats &amp; 100%.</strong> Partner trophies with Lucia/Jason, then mop up whatever the checklist shows as missing until the in-game counter reads 100% — A Long Road pops, and the platinum follows.</li>
+  </ol>
+</section>
+
 <div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+  <label class="search">Search <input id="q" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+  <label>Grade <select id="grade">
+    <option value="all">All grades</option>
+    <option value="platinum">Platinum</option>
+    <option value="gold">Gold</option>
+    <option value="silver">Silver</option>
+    <option value="bronze">Bronze</option>
+  </select></label>
+  <label>Category <select id="category">
+    <option value="all">All categories</option>
+  </select></label>
+  <label>Status <select id="status">
+    <option value="all">All</option>
+    <option value="earned">Earned</option>
+    <option value="unearned">Unearned</option>
+    <option value="missable">Missable only</option>
+  </select></label>
+  <label class="spoilers"><input id="spoilers" type="checkbox" checked> Hide spoilers</label>
   <button id="export" type="button">Export progress</button>
   <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+  <button id="reset" type="button">Reset</button>
 </div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<p class="stats"><span id="progress">0 of 55 earned</span> &middot; <span id="points">0 / 1,350 points</span> &middot; <span id="shown">55 shown</span></p>
+
+<main class="grid" id="grid"></main>
+
+<p class="empty" id="empty" hidden>No trophies match these filters. Clear the search or widen a filter.</p>
+
+<footer>
+  <p>Sources: the official GTA VI trophy list as published on Exophase (2026-11-19), with launch-day rarity from Exophase's tracked players (~10:09 UTC, 2026-11-19). Guides are written in our own words; where a mechanic is described by analogy it follows GTA V / GTA Online conventions. Rarity is a launch-day snapshot, not a difficulty ranking.</p>
+  <p>Fan-made guide. Not affiliated with, endorsed by, or connected to Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. No Rockstar logos, artwork or fonts are used here. Data is static and the app works fully offline.</p>
+</footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
